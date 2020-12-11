@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- submit form to python  -->
+    <form method="POST" action="/load_image">
+    <div>
+        <div>Image classification</div>
+       <input type="text" name="url" id="input_text">
+       <input type="submit" value="Upload image" onclick="getElement()">
+    </div>
+    </form>
+    <!-- show image -->
+    <img id= image_file src= {{route}}>
+    <div>
+        <!-- classification result   -->
+        <div>This image is</div>
+        <input type="text" value= {{result}}>
+    </div>
+</body>
+<script>
+    <!-- input url -> image  -->
+    function getElement(){
+        var url= document.getElementById("input_text").value
+        document.getElementById('image_file').src= url
+    }
+</script>
+</html>
